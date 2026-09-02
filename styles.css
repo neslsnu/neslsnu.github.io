@@ -719,6 +719,27 @@ h2 { margin: 3px 0 0; font-size: 18px; line-height: 1.35; }
 
 .member-grid.is-alumni .member-card h3 { font-size: 13px; }
 
+.pub-list.is-detailed li { margin-bottom: 16px; }
+
+.pub-list.is-detailed b { color: var(--ink); font-weight: 700; }
+
+.pub-authors { color: #6c757e; font-style: italic; }
+
+.pub-venue { color: var(--blue); }
+
+.pub-detail { color: #6c757e; }
+
+.pub-index {
+  display: inline-block;
+  margin-top: 3px;
+  padding: 1px 6px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .04em;
+}
+
 @media (max-width: 900px) {
   .home-panels { grid-template-columns: repeat(2, 1fr); }
   .projects-panel { grid-column: 1 / -1; }
