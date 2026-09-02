@@ -640,15 +640,6 @@ h2 { margin: 3px 0 0; font-size: 18px; line-height: 1.35; }
 
 .research-card .card-note { margin: 12px 0 0; color: #9aa2ab; font-size: 11px; }
 
-.archive-note {
-  margin: 0 0 30px;
-  padding: 14px 17px;
-  border-left: 3px solid var(--blue);
-  background: var(--soft);
-  color: #5b636d;
-  font-size: 12px !important;
-}
-
 .topic h2 .count {
   margin-left: 8px;
   color: var(--muted);
@@ -814,10 +805,6 @@ h2 { margin: 3px 0 0; font-size: 18px; line-height: 1.35; }
 .news-list time { flex: 0 0 78px; color: var(--blue); font-size: 11px; font-weight: 700; }
 
 .news-title { color: #4b5560; font-size: 13px; line-height: 1.6; }
-
-.news-cut { margin-left: 2px; color: #b0b7bf; cursor: help; }
-
-.note-small { margin-top: 12px !important; color: #9aa2ab; font-size: 11px !important; }
 
 .gallery-board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 18px; }
 
