@@ -68,8 +68,8 @@
           <ul>
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#robust-receding-horizon">Robust &amp; Receding Horizon Kalman Filter</a></li>
-            <li class="is-missing"><a href="#unscented">Unscented Kalman Filter<span aria-hidden="true">·</span></a></li>
-            <li class="is-missing"><a href="#particle">Particle Filter<span aria-hidden="true">·</span></a></li>
+            <li><a href="#unscented">Unscented Kalman Filter</a></li>
+            <li><a href="#particle">Particle Filter</a></li>
           </ul>
         </aside>
 
@@ -77,22 +77,22 @@
           <section id="introduction" class="topic">
             <h2>Introduction</h2>
             <p class="point">지상 무기 체계와 같이 초기 자세 오차가 큰 경우나 급격한 기동으로 인하여 항법 오차 모델의 선형성을 보장 할 수 없는 환경에서는 INS 시스템과 GPS 측정치는 비선형 특성을 가지는 비선형 시스템이 된다. 이러한 비선형 시스템의 오차를 정확하게 추정하기 위해서는 기존에 사용된 칼만필터(Kalman Filter)와는 다른 비선형 필터가 요구된다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p class="point">대표적인 비선형 필터로 확장 칼만필터 (EKF)가 있으며 최근 20여년간 비선형 모델에 널리 사용되어 왔다. 그러나 EKF는 비선형 모델을 1차 선형화 시켜서 사용하는 것으로 오차가 매우 클 경우에는 추정 성능이 저하되는 단점을 가지게 된다. 이러한 문제를 해결하기 위하여 최근에는 다양한 비선형 필터링 기법이 제시되었으며 대표적으로 UKF (Unscented Kalman Filter)와 PF (Particle Filter) 등을 들 수 있다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p class="point">UKF는 sigma point (SP)라 부르는 확정적인 선택 점(Deterministically shosen points)의 집합을 비선형 모델을 사용하여 변환하는 Unscented transform (UT)을 이용한다. SP은 비선형 모델의 랜덤 상태변수를 통계적으로 가장 잘 나타낼 수 있도록 선택한다.</p>
             <p class="point">일반적으로 가우시안 모델에 대하여 SP를 결정하여 비선형 필터링을 수행하는 기법을 sigma point Kalman filter (SPKF)로 정의하며 SPKF 종류로 UKF 와 CDKF (Central Difference Kalman filter), 제곱근 형태(Square root, SR)로 SP를 결정하는 SRUKF, SRCDKF 등이 있다.</p>
             <p class="point">PF는 많은 입자(particles)들을 시스템의 확률분포와 연계하여 시스템의 결과를 추정하는 방식이다. 파티클 필터는 1950년대 처음 소개가 되어 연구되기 시작했지만, 1970년대까지만 하더라도 계산량이 매우 많았기 때문에 많이 사용되지 않았다 그러나 1980년대 들어와서 Bayesian filtering과 resampling 방식이 적용된 후에는 PF의 성능이 향상되어 여러 분야에서 사용되고 있다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
           </section>
           <section id="robust-receding-horizon" class="topic">
             <h2>Robust &amp; Receding Horizon Kalman Filter</h2>
             <p class="point">칼만 필터를 사용하여 상태 변수를 추정하는 방법은 다양하게 연구되어 왔으며, 급격한 외란이 발생하는 상황에서 외란에 대한 영향을 적게 받으며 상태 변수를 추정하는 방법으로 최근의 관측치를 주로 이용하는 이동구간 칼만 필터가 제시되었다.</p>
             <p class="point">최근의 관측치를 사용하여 상태 변수를 추정하는 법으로 유한 기억 추정법(Finite memory estimation)이나 이동 구간 추정법(sliding window estimation)등이 존재하며 이러한 추정자는 일종의 FIR(Finite impulse response) 추정자로 사용자가 설정한 임의의 구간에 해당하는 최근의 관측치를 사용하여 상태 변수를 추정한다. FIR 필터에 대비되어 최초의 측정치부터 추정하고 있는 현재까지의 측정치를 모두 사용하여 상태 변수를 방법으로는 IIR(Infinite impulse response)이 있다.</p>
             <p>다음 그림은 현재의 상태 변수를 추정하기 위해 사용하는 측정치 영역을 비교하여 나타낸 것이다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p>아래 그림은 동일한 측정치와 외란 구간에 대하여 IIR 필터와 FIR 필터로 추정하였을 때 상태변수의 추정 오차를 나타낸 것으로 IIR 필터와 FIR 필터 성능을 비교할 수 있고 위에서 제시한 각 필터의 특성을 확인할 수 있다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p>위 그림과 같이 IIR 필터는 초기 측정치부터 현재까지 측정치를 모두 사용하여 상태변수를 추정하므로 초기 측정치가 현재까지 영향을 미치게 되고 FIR 필터는 임의의 구간에 해당하는 최근의 측정치를 사용하여 임의의 구간에 속하는 측정치만 상태변수의 추정에 영향을 미친다.
             상태변수를 추정하는데 사용하는 측정치 영역의 차이는 외란에 대한 영향에서도 서로 다르게 나타난다.
             일반적으로 FIR 필터는 IIR 필터에 비해 추정 오차 및 일시적 외란에 강인한 특성을 갖는데, 이는 계측치가 속한 구간이 외란의 영역을 벗어나게 되면 현재의 상태 변수는 구간 초기치(horizon initial state)만이 외란의 영향을 받기 때문이다.</p>
@@ -102,11 +102,23 @@
           </section>
           <section id="unscented" class="topic">
             <h2>Unscented Kalman Filter</h2>
-            <p class="missing-topic">이 항목은 웹 아카이브에 캡처가 남아 있지 않아 본문을 복구하지 못했습니다. 원본 사이트의 메뉴 구성에만 존재가 확인됩니다.</p>
+            <p>지상 무기 체계와 같이 초기 상태에서 작전 개시와 함께 기동을 수행해야 하는 경우나 작전 중 급격한 기동을 하는 경우에는 항법 오차 모델의 선형성을 보장 할 수 없게 되며 이로 인하여 항법시스템은 비선형 특성을 가지는 비선형 시스템이 된다.</p>
+            <p>또한 여러 실제 환경은 비선형으로 모델링 되기 때문에 비선형성을 고려한 필터링 알고리즘이 필요하게 된다.</p>
+            <p>비선형 시스템에 최근 20여년간 가장 널리 사용되어 온 것이 확장 칼만필터(Extended KF-EKF)이다. 그러나, EKF는 비선형 모델을 1차로 선형화 시켜 사용함으로써 오차가 매우 클 경우에는 추정 성능이 저하되는 단점을 가지게 된다.</p>
+            <p>이러한 문제를 해결하기 위하여 1995년 Julier와 Uhlmann에 의하여 UKF(Unscented Kalman Filter)가 연구되어 그 성능이 다양한 비선형 시스템에서 우수한 성능을 가지는 것으로 알려졌다.</p>
+            <h3>UKF는 시그마 점(Sigma Point-SP)</h3>
+            <p class="lede">UKF는 시그마 점(Sigma Point-SP)이라 부르는 확정적인 선택 점(deterministically chosen points)의 집합을 비선형 모델을 사용하여 변환하는 Unscented 변환(Unscented Transform-UT)에 기초를 두고 있다.</p><figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표: 시그마 점은 비선형 모델의 랜덤 상태변수를 통계적으로 가장 잘 나타낼 수 있도록 선택 된다.지금까지 연구된 SP의 선택 방법으로는 시스템 차수 N의 2배만큼 SP를 선택하는 기법, 2N개의 SP에 평균값을 추가하여 2N+1개의 SP를 선택하는 기법, SP의 개수를 2N개보다 축소하여 선택하는 기법, SP의 개수를 2N개 보다 늘여서 선택하는 기법 등이 있다.UKF의 기본이 되는 UT에 대해서 간략히 살펴보면 다음과 같다.UT변환은 비선형 함수로 주어지는 상태 변수의 평균 및 공분산 정보 등의 통계치를 고려한 시그마 점의 결정과 결정된 시그마 점의 비선형 변환 이후의 평균과 공분산 정보를 계산하는 일련의 과정으로 이루어진다.UT에서 사용되는 기본적인 개념은 EKF와 같이 비선형 함수를 근사화 하는 것보다 확률 분포를 근사화하는 것이 더 용이하다는 것이다.이러한 UT변환은 입자 필터(particle filter)에서 입자를 결정하는 것과 유사한 개념이나 기본적인 차이점은 입자 필터는 랜덤(random)하게 입자를 선택하지만 UKF에서 사용하는 SP는 결정적인(deterministic) 방법으로 선택한다는 것이다.이와 함께, UT에서는 가중치를 사용하여 SP의 존재 구간을 변화 시킬 수 있다는 것이 차이점이다. UKF는 앞에서 설명한 UT기법을 적용한 칼만필터이다.UKF 알고리즘"><span aria-hidden="true">도표 유실</span></div><figcaption><b>시그마 점은 비선형 모델의 랜덤 상태변수를 통계적으로 가장 잘 나타낼 수 있도록 선택 된다.지금까지 연구된 SP의 선택 방법으로는 시스템 차수 N의 2배만큼 SP를 선택하는 기법, 2N개의 SP에 평균값을 추가하여 2N+1개의 SP를 선택하는 기법, SP의 개수를 2N개보다 축소하여 선택하는 기법, SP의 개수를 2N개 보다 늘여서 선택하는 기법 등이 있다.UKF의 기본이 되는 UT에 대해서 간략히 살펴보면 다음과 같다.UT변환은 비선형 함수로 주어지는 상태 변수의 평균 및 공분산 정보 등의 통계치를 고려한 시그마 점의 결정과 결정된 시그마 점의 비선형 변환 이후의 평균과 공분산 정보를 계산하는 일련의 과정으로 이루어진다.UT에서 사용되는 기본적인 개념은 EKF와 같이 비선형 함수를 근사화 하는 것보다 확률 분포를 근사화하는 것이 더 용이하다는 것이다.이러한 UT변환은 입자 필터(particle filter)에서 입자를 결정하는 것과 유사한 개념이나 기본적인 차이점은 입자 필터는 랜덤(random)하게 입자를 선택하지만 UKF에서 사용하는 SP는 결정적인(deterministic) 방법으로 선택한다는 것이다.이와 함께, UT에서는 가중치를 사용하여 SP의 존재 구간을 변화 시킬 수 있다는 것이 차이점이다. UKF는 앞에서 설명한 UT기법을 적용한 칼만필터이다.UKF 알고리즘</b><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure><p>그림1은 UKF 알고리즘을 간략히 설명하는 그림이다.</p>
+            <p>UKF는 우선 초기화 과정을 거친 후 시간 업데이트 과정을 거치는데 여기서 SP를 선택하고 변환하여 공분산을 구한 후 측정치 업데이트 과정을 거쳐 우리가 원하는 상태변수를 추정하는 필터이다.</p>
+            <p>비선형성이 높은 시스템에 대해서 그건 사용되어온 EKF보다 성능이 우수하여 최근 많은 비선형 필터링 분야에서 활용되고 있다.</p>
           </section>
           <section id="particle" class="topic">
             <h2>Particle Filter</h2>
-            <p class="missing-topic">이 항목은 웹 아카이브에 캡처가 남아 있지 않아 본문을 복구하지 못했습니다. 원본 사이트의 메뉴 구성에만 존재가 확인됩니다.</p>
+            <h3>파티클 필터(particle filter)</h3>
+            <p>파티클 필터(particle filter)는 많은 상태변수 후보(particles)를 시스템의 확률 분포와 연계하여 시스템의 결과를 추정하는 방식이다.
+            파티클 필터는 많은 계산량(computation load)을 요구하기 때문에 1950년대에 처음으로 소개가 되었지만, 당시의 컴퓨터로는 계산이 어려워 널리 이용되지 않았다. 그러나 컴퓨터의 계산능력 향상과 함께 1987년 Kitagawa가 제시한 베이지안 필터링(Bayesian filtering)과 1988년 Liu&amp;Chen이 제안한 리샘플링(resampling) 방식이 적용된 이후부터는 파티클 필터의 성능이 향상되어 여러 분야에서 사용되고 있다.</p>
+            <p>일반적인 파티클 필터는 다음과 같은 베이즈 법칙을 기반으로 구성되어 있다.</p><figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure><p>일반적인 칼만필터와 마찬가지로 이전 스텝의 정보를 시스템 모델의 확률과 결합하여 priori probability density function(pdf)을 구하고 측정치의 likelihood와 결합하여 측정치 업데이트에 의한 posterior pdf를 통해 상태변수의 확률분포를 구할 수 있다.</p><figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure><p>파티클 필터의 기본 개념은 그림과 같다. N개의 입자(state)를 시스템의 확률 분포에 똑같은 가중치로 무작위로 배치한다. 이 때 시스템의 확률 분포가 큰 값에 배치된 입자의 가중치는 커지고, 작은 값에 배치된 입자의 가중치는 작아진다. 그리고 새로 생성된 가중치의 크기를 비교하는데, 작은 값의 가중치를 가지는 입자들은 신뢰하지 않기 때문에 없애고, 큰 값의 가중치를 가지는 입자들만을 선택하고 비교하여 없애버린 입자만큼 자신과 같은 입자들을 생성하여 다시 N개의 입자들을 형성한다.
+            이렇게 생성된 N개의 입자들을 이용하여 시스템을 추정항고 또한 처음의 과정으로 돌아가 반복함으로써 시스템의 다음 결과를 추정하게 된다.</p><figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure><p>2000년대에 들어서면서 파티클 필터에 대한 연구가 활발히 이루어져 다양한 방식의 파티클 필터가 개발되었다. Sampling Importance Resampling (SIR) Filter는 기존 파티클 필터의 고질적인 문제인 degeneracy 문제와 계산량을 감소시켰다. 1999년 Pitt와 Shephard는 가중치가 균일하게 형성되지 않았을 경우에 생기는 문제를 해결하기 위해 Auxiliary Sampling Importance Resampling(ASIR) Filter를 제안하였다.
+            이외에도 Markov Chain Monte Carlo(MCMC) 기법을 사용하여 sample 형성 방식을 개선한 Regularized particle Filter나 SIR 필터에 Kalman Filter를 적용하여 degeneracy 문제를 더욱 감소시킨 Local Linearization Particle Filters(LLPF), 다양한 모델이 존재할 때 적용되는 Multiple Model Particle Filter와 같은 다양한 방식의 파티클 필터가 연구되고 있다.</p>
           </section>
         </div>
       </div>

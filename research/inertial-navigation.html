@@ -70,7 +70,7 @@
             <li><a href="#sensor-calibration">Inertial Sensor Calibration</a></li>
             <li><a href="#alignment">Alignment</a></li>
             <li><a href="#attitude-algorithm">Attitude Algorithm</a></li>
-            <li><a href="#coning-sculling">Conning and Sculling Compensation</a></li>
+            <li><a href="#coning-sculling">Coning and Sculling Compensation</a></li>
             <li><a href="#ahrs">AHRS</a></li>
           </ul>
         </aside>
@@ -88,11 +88,11 @@
             <li>INS는 크게 김블형(Gimbaled INS)과 스트랩다운형(Strapdown INS)으로 나눌 수 있다. 김블형 INS는 3~4개의 김블구조위에 관성센서가 장착되어 외부의 자세변화와 관계없이 관성센서가 물리적으로 일정한 자세를 유지하도록 설계되어 있다. 스트랩다운형은 관성센서가 직접 동체에 장착되어 있으며, 자이로에서 측정된 각속도를 이용하여 기준 좌표계에 대한 동체의 자세를 계산한다. 스트랩다운형은 구조적으로 간단하고 전력소모가 적다는 장점을 가지나 자세를 자이로에만 의존하여 구하기 때문에 김벌형 INS에 비해 자이로의 성능이 고성능일 것이 요구된다.</li>
             <li>INS는 관성센서의 성능이 곧 시스템의 성능과 직결되며, Scalefactor Stability, Bias stability에 따라 Strategical Grade, Navigation Grade, Tactical Grade, Automotive Grade로 분류된다. Grade에 따른 관성센서 활용분야는 다음 그림과 같다.</li>
             </ul>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p class="point">1980년대 후반부터 초소형 반도체 제조공정 기술에 근간한 MEMS 기술의 발전으로 MEMS 관성센서를 이용한 관성시스템(ARS or AHRS)이 자동차, 핸드폰, 로봇등에 광범위하게 사용되며 주목을 받고 있다.</p>
             <p class="point">일반적인 스트랩다운 관성항법 알고리즘의 구성은 다음그림과 같다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p class="point">가속도계와 자이로 센서데이터는 Sensor Calibration을 통해 센서 데이터의 오차를 보상하여 보다 정확한 가속도와 각속도 데이터로 변환한다. 항법계산 주기와 센서 샘플링 주기가 다를 경우 생길 수 있는 오차를 보상하기 위하여 Coning과 Sculling Compensation을 수행한다. 각속도를 적분하여 항체의 자세를 계산하고 이 자세를 이용하여 가속도 데이터를 항법좌표계로 변환하고 중력을 보상하여 항법좌표계에서의 속도를 계산한다. 이렇게 계산된 속도를 다시 적분하여 위치를 계산한다.</p>
             <p class="point">알고리즘 구성도에서 알 수 있듯이 스트랩다운 관성항법 알고리즘은 특성상 해결해야할 많은 공학적인 문제들을 발생시킨다. 자이로 가속도계 센서 출력을 이용하여 자세를 계산하는 문제(Attitude Algorithm), 관성센서에서 적분과정이 충분히 빠르지 못해 생기는 오차를 보상하기 위한 코닝과 스컬링 보상(Coning and Sculling Compensation), 자이로 및 가속도계와 같은 센서 보상(Calibration)방법과 항법모드 진입전에 항체의 초기 자세를 걸정하는 초기 정렬이(Initial Alignment)나 항법모드 중에 발생하는 항법오차를 보조센서를 사용하여 보정하는 운항 중 정렬(in-Flight Alignment)등의 정렬 문제, 저가형 MEMS INS를 사용할 경우 사용하는 AHRS 알고리즘등이 있다.</p>
           </section>
@@ -109,22 +109,22 @@
             <li>이를 센서 온도 보상이라고 하며, 수행과정과 결과는 그림 1~2과 같다.</li>
             <li>보상 결과를 보면 알 수 있듯이 센서의 바이어스가 온도에 따라 선형적 또는 고차 다항식으로 표현 됨을 알 수 있다.</li>
             </ul>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
           </section>
           <section id="alignment" class="topic">
             <h2>Alignment</h2>
             <h3>정렬알고리즘</h3>
-            <p class="point"><span>정렬알고리즘은</span> 항체의 플랫폼 또는 동체 좌표계(body frame)를 항법 계산 좌표계(navigation frame)로 변환시키는 과정이라고 할 수 있다. 이는 두 좌표계가 이루는 오일러(Euler) 자세각을 계산하고 이를 바탕으로 방향코사인행렬(DCM), 또는 쿼터니언(quaternion)을 계산하는 것이다. 플랫폼 좌표계는 일반적으로 서로 직교인 가속도계 3축의 방향을 말한다.
+            <p class="point">정렬알고리즘은 항체의 플랫폼 또는 동체 좌표계(body frame)를 항법 계산 좌표계(navigation frame)로 변환시키는 과정이라고 할 수 있다. 이는 두 좌표계가 이루는 오일러(Euler) 자세각을 계산하고 이를 바탕으로 방향코사인행렬(DCM), 또는 쿼터니언(quaternion)을 계산하는 것이다. 플랫폼 좌표계는 일반적으로 서로 직교인 가속도계 3축의 방향을 말한다.
             동체 좌표계는 흔히 항체의 롤, 피치 , 요각과 일치한다. 항법 좌표계는 ECI(Earth Centered Inertial), ECEF(Earth Centered Earth Fixed), 또는 LGV(Local Geodetic Vertical) 좌표계 등이 있다.
             탄도 미사일, 우주선 등에서 항법 좌표계는 편리성 때문에 흔히 ECI, ECEF로 표현되며, 항공기 등에서는 계산 좌표계를 흔히 지구의 표준타원체를 기준으로 한 LGV로 표현한다.
             목표물 추적(target tracking) 등의 분야에서는 LGV의 일종인 local ENU(Earth, North, Up) 직교 좌표계로 표현하는 것이 일반적이고, 비행기 등에서는 고도를 양수로 표현하는 관행 때문에, ENU 좌표계보다 local NED(North, East, Down) 좌표계로 표현하는 것이 일반적이다.</p>
-            <p class="point"><span>정렬 알고리즘은</span> 수행하는 시점과 외부 항체로부터 정보 입수 여부, 정렬의 정확도 등을 기준으로 다음과 같이 다양하게 분류할 수 있다. 먼저, 정렬 알고리즘을 시점에 따라 분류하면 초기정렬(initial alignment)과 운항중정렬(inflight alignment) 알고리즘으로 나눌 수 있다. 초기정렬은 항체가 운항을 시작하기 전에 정지상태에서 정렬을 수행하는 반면에 운항중중렬은 항체가 운항하는 중에 특정한궤적을 운항하면서 수행하는 것이다.
+            <p class="point">정렬 알고리즘은 수행하는 시점과 외부 항체로부터 정보 입수 여부, 정렬의 정확도 등을 기준으로 다음과 같이 다양하게 분류할 수 있다. 먼저, 정렬 알고리즘을 시점에 따라 분류하면 초기정렬(initial alignment)과 운항중정렬(inflight alignment) 알고리즘으로 나눌 수 있다. 초기정렬은 항체가 운항을 시작하기 전에 정지상태에서 정렬을 수행하는 반면에 운항중중렬은 항체가 운항하는 중에 특정한궤적을 운항하면서 수행하는 것이다.
             다음으로 정렬 알고리즘을 외부로부터 자세, 속도 등의 정보를 전달받아 수행하는 전달정렬(transfer alignment)과 외부 정보 없이 독립적으로 수행하는 자기정렬(self alignment)로 구분할 수 있다. 마지막으로 항체의 개략적인 초기 자세를 계산하는 개략정렬(coarse alignment)과 이 때 발생한 오차를 추정, 보정함으로써 보다 정밀한 자세를 계산하는 정밀정렬(fine alignment)로 분류할 수 있다.</p>
             <p>예를 들어 정리하면, 스트랩다운(strapdown)관성항법시스템에서 초기자기개략정렬이란 정밀정렬을 위해 빠른 시간 내에 좋은 초기 조건을 제공하기 위해 동체 좌표계와 항법 좌표계 간의 초기 자세각 관계를 구하는 것이며, 이 초기 자세각(오일러 각)을 바탕으로 DCM, 쿼터니언을 계산하는 과정이라고 할 수 있다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p>초기 개략정렬 알고리즘은 Britting이 제시한 단일 개략정렬과 본 연구실에서 개발한 2단계 개략정렬 알고리즘이다. NED 좌표계로 표현한 2단계 개략정렬 알고리즘은 다음과 같다. 2단계 개략정렬은 레벨링(Leveling)과 자이로컴파싱(Gytocompassing) 원리를 이용하여 중력가속도와 지구 자전각속도를 나누어서 좌표변환행렬과 자세각을 구한다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
           </section>
           <section id="attitude-algorithm" class="topic">
             <h2>Attitude Algorithm</h2>
@@ -168,17 +168,17 @@
             </tr>
             </table>
             <h3>스트랩다운 관성항법시스템에 대한 순수항법 알고리즘</h3>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
           </section>
           <section id="coning-sculling" class="topic">
-            <h2>Conning and Sculling Compensation</h2>
+            <h2>Coning and Sculling Compensation</h2>
             <p>일반적으로 항법 계산 주기와 관성 센서 데이터의 샘플링 주기는 일치하지 않으며, 항법계산주기에 비하여 센서 데이터의 샘플링주기가 빠른 경우가 대부분이다. 이럴 경우, 항법 계산 주기 동안 관성 센서 데이터의 출력을 적분하여 항법계산에 이용한다.</p>
             <p>하지만 고속으로 기동하는 항체의 경우, 항법 계산주기보다 더 높은 주파수의 가속도와 각속도 성분이 존재하는데, 이러한 경우 항법계산 주기 동안 가속도계와 자이로의 출력을 적분하는 과정에서 오차가 발생하게 된다.</p>
             <p>가속도계와 자이로에서 발생하는 이러한 오차를 보상하는 것을 각각 Coning, Sculling Compensation이라고 한다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p>코닝 오차는 항체의 두 축에 위상차를 지닌 정현파 운동이 입력될 경우 나타난다.</p>
             <p>예를 들어 위의 그림과 같이 T0에서 T4까지 관성센서 데이터를 적분하여 사용하는 경우를 생각해 보자. 그래프 상에서 살펴보면 T0~T4사이의 항법계산 주기 동안, 차례로 x축으로 각속도 a,y축으로 각속도 b, 다시 x축으로 각속도 -a, 마지막으로 y축으로 각속도 -b로 회전이 들어왔다. 따라서 실제로는 x축과 y축으로 그래프 아래 부분을 적분한 만큼의 회전이 일어났지만, 전체 구간 동안의 각속도를 적분하여 사용할 경우, x, y축으로의 각속도 입력은 0이 되기 때문에 자세는 변화하지 않은 것으로 계산되고, 결과적으로 자세오차가 발생하게 된다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
             <p>한편 스컬링 오차는 한 축에 정현파 회전운동이 입력되고, 그에 수직한 다른 축에 선형 혹은 정현파 가속도 운동이 입력되면 발생한다. 이 때 각속도와 가속도 운동이 입력되는 2축이 아닌 남은 1축에 대하여 속도오차가 발생하게 된다.</p>
             <p>위의 그림에서 볼 수 있듯이, x축으로 일정 성분의 가속도가 들어오고, z축으로 90도 회전 후, y축으로 가속도가 들어온 후 다시 z축으로 -90도 회전하게 되면, 그림에서 볼 수 있듯이 원래 위치와 자세로 돌아오게 되지만, 센서 데이터 적분 구간 동안 입력된 가속도는 x, y 축으로 가속도가 입력되고 회전은 없는 것으로 판단되어 아래의 그래프와 같이 속도 오차가 발생하게 된다.</p>
             <p>이러한 코닝과 스컬링 오차를 보상하기 위해서는 일반적으로 항법 계산주기보다 더 짧은 샘플링 구간을 정하여 현재 센서 데이터 샘플과 메모리에 저장된 과거 데이터 샘플 1~2개를 이용한 오차 보상 알고리즘을 통하여 보상한다.</p>
@@ -186,15 +186,15 @@
           <section id="ahrs" class="topic">
             <h2>AHRS</h2>
             <h3>ARS</h3>
-            <p class="point"><span>ARS는</span> 가속도계와 자이로 같은 관성센서를 이용하여 동체의 자세를 계산하는 IMU를 말한다. AHRS는 ARS에 지자기 센서를 추가하여 자세뿐만 아니라 방위각도 계산할 수 있는 IMU이다.
+            <p class="point">ARS는 가속도계와 자이로 같은 관성센서를 이용하여 동체의 자세를 계산하는 IMU를 말한다. AHRS는 ARS에 지자기 센서를 추가하여 자세뿐만 아니라 방위각도 계산할 수 있는 IMU이다.
             ARS와 AHRS는 주로 소형 무인항공기나 자율 주행 차량, 또는 로봇 등의 자세 제어에 사용되고 있으며 최근 관성센서 방식의 motion capture system에도 응용되고 있다.</p>
-            <p class="point"><span>ARS는</span> 동체의 자세 중, 롤과 피치를 계산하는 장치로 자이로와 가속도계를 이용하여 정확한 동체의 자세를 계산한다.
+            <p class="point">ARS는 동체의 자세 중, 롤과 피치를 계산하는 장치로 자이로와 가속도계를 이용하여 정확한 동체의 자세를 계산한다.
             일반적인 관성항법 시스템에서 동체의 자세는 자이로를 이용하여 동체의 각속도를 측정한 후 적분 계산을 수행하여 계산한다. 그러나 저가형 자이로의 출력에는 센서 오차가 포함되어 있으므로 정확한 각속도 측정이 불가능하다. 그리고 자이로에 포함된 매우 작은 오차도 적분과정을 거치면 자세오차를 기하급수적으로 크게 만들어 자세 오차가 발산하게 된다. 그래서 일반적인 ARS는 자세계산을 위하여 가속도계를 이용한 보정 과정을 거치게 된다.
             이러한 자세 보정 과정은 주로 칼만 필터나 least square 필터 등의 방식을 이용한다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
-            <p class="point"><span>ARS는</span> 가속도계를 이용하여 중력가속도만을 이용한 보정을 수행하므로 방위각은 자이로에 의한 계산만을 수행한다. 이 경우 방위각 오차가 발산하여 방위각은 계산할 수 없다. 따라서 방위각을 계산하기 위해서는 지자기 센서의 출력도 함께 사용하는 자세 보정 방식이 필요하다.
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
+            <p class="point">ARS는 가속도계를 이용하여 중력가속도만을 이용한 보정을 수행하므로 방위각은 자이로에 의한 계산만을 수행한다. 이 경우 방위각 오차가 발산하여 방위각은 계산할 수 없다. 따라서 방위각을 계산하기 위해서는 지자기 센서의 출력도 함께 사용하는 자세 보정 방식이 필요하다.
             AHRS는 ARS에 지자기 센서를 추가한 형태이다. 그러나 지자기 센서는 외부 자기장의 변화에 민감하게 반응하므로 이를 적절히 처리하는 형태의 알고리즘 개발이 필수적이다. 아래 사진은 본 연구실에서 개발한 AHRS의 모습이다.</p>
-            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표가 남아 있지 않습니다</span></figcaption></figure>
           </section>
         </div>
       </div>
