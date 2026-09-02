@@ -915,6 +915,8 @@ a.link-card:focus-visible { border-color: var(--blue); }
 
 .prof-contact .ico { color: var(--blue); }
 
+.prof-tel-note { color: var(--muted); font-size: 11px; }
+
 .prof-contact a { word-break: break-all; }
 
 .prof-contact a:hover, .prof-contact a:focus-visible { color: var(--blue); text-decoration: underline; }
