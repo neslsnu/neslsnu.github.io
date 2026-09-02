@@ -1,0 +1,12 @@
+# 저장소 안에서는 텍스트를 LF로 통일 (체크아웃 시 OS 기본값 적용)
+* text=auto eol=lf
+
+# 바이너리 자산은 변환하지 않음
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.gz binary
+*.warc binary

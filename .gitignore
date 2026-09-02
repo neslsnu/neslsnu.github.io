@@ -1,0 +1,13 @@
+# 아카이브 원본 보존본 (로컬에만 유지, 배포 대상 아님)
+reference/
+
+# 작업 중 캡처한 확인용 스크린샷
+verification/
+
+# OS / 편집기
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+*.swp

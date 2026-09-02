@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="서울대학교 항법전자시스템연구실 Navigation and Electronics System Lab">
+    <meta name="theme-color" content="#00397f">
+    <title>서울대학교 항법전자시스템연구실 | NESL</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+    <header class="site-header" id="home">
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="NESL 홈으로 이동">
+          <img src="assets/images/main/logo.jpg" alt="NESL 서울대학교 항법전자시스템연구실">
+        </a>
+
+        <div class="utility-links" aria-label="보조 메뉴">
+          <a href="#home">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="#research">Research</a>
+          <span aria-hidden="true">|</span>
+          <a href="#location">Contact</a>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">메뉴 열기</span>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="site-nav" id="primary-navigation" aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li><a href="#research" data-menu="research"><img src="assets/images/nav/gnb1.jpg" alt="Research"></a></li>
+          <li><a href="#projects" data-menu="projects"><img src="assets/images/nav/gnb2.jpg" alt="Project"></a></li>
+          <li><a href="#members" data-status="planned"><img src="assets/images/nav/gnb3.jpg" alt="Member"></a></li>
+          <li><a href="#publications" data-status="planned"><img src="assets/images/nav/gnb4.jpg" alt="Publication"></a></li>
+          <li><a href="#lecture" data-status="planned"><img src="assets/images/nav/gnb5.jpg" alt="Lecture"></a></li>
+          <li><a href="#bbs" data-menu="bbs"><img src="assets/images/nav/gnb6.jpg" alt="BBS"></a></li>
+          <li><a href="#links" data-status="planned"><img src="assets/images/nav/gnb7.jpg" alt="Link"></a></li>
+          <li><a href="#location" data-menu="location"><img src="assets/images/nav/gnb8.jpg" alt="Location"></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-label="NESL 연구 분야 소개">
+        <div class="hero-slides">
+          <figure class="hero-slide is-active">
+            <img src="assets/images/main/main2.jpg" alt="지형 데이터베이스를 활용한 항법 연구">
+          </figure>
+          <figure class="hero-slide">
+            <img src="assets/images/main/main3.jpg" alt="나노 위성 기반 항법 연구">
+          </figure>
+          <figure class="hero-slide">
+            <img src="assets/images/main/main4.jpg" alt="관성항법시스템 연구">
+          </figure>
+          <figure class="hero-slide">
+            <img src="assets/images/main/main5.jpg" alt="달 착륙선을 위한 통합 항법 연구">
+          </figure>
+          <figure class="hero-slide">
+            <img src="assets/images/main/main6.jpg" alt="보행자 추측항법 연구">
+          </figure>
+        </div>
+
+        <div class="hero-controls" aria-label="메인 이미지 슬라이드 제어">
+          <button class="hero-arrow" type="button" data-direction="previous" aria-label="이전 연구 이미지">‹</button>
+          <div class="hero-dots" role="tablist" aria-label="연구 이미지 선택">
+            <button class="hero-dot is-active" type="button" role="tab" aria-label="첫 번째 연구 이미지" aria-selected="true"></button>
+            <button class="hero-dot" type="button" role="tab" aria-label="두 번째 연구 이미지" aria-selected="false"></button>
+            <button class="hero-dot" type="button" role="tab" aria-label="세 번째 연구 이미지" aria-selected="false"></button>
+            <button class="hero-dot" type="button" role="tab" aria-label="네 번째 연구 이미지" aria-selected="false"></button>
+            <button class="hero-dot" type="button" role="tab" aria-label="다섯 번째 연구 이미지" aria-selected="false"></button>
+          </div>
+          <button class="hero-arrow" type="button" data-direction="next" aria-label="다음 연구 이미지">›</button>
+        </div>
+      </section>
+
+      <section class="home-panels" id="research" aria-label="NESL 주요 콘텐츠">
+        <article class="home-panel video-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Video <span>Youtube</span></p>
+              <h2>실내 보행 항법</h2>
+            </div>
+            <a class="panel-more" href="https://www.youtube.com/watch?v=q13SSdJDmzs" target="_blank" rel="noreferrer" aria-label="실내 보행 항법 동영상 열기">+</a>
+          </div>
+          <p class="panel-description">자율주행과 위치 추정에 활용되는 보행자 추측항법(PDR)을 소개합니다.</p>
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/q13SSdJDmzs" title="실내 보행 항법 소개 동영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </article>
+
+        <article class="home-panel gallery-panel" id="bbs">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Gallery</p>
+              <h2>연구실 갤러리</h2>
+            </div>
+            <button class="panel-more" type="button" data-status="planned" aria-label="갤러리 메뉴는 다음 복구 단계에서 연결됩니다">+</button>
+          </div>
+          <p class="panel-description">아카이브에 남아 있는 NESL 연구 현장의 일부를 소개합니다.</p>
+          <div class="gallery-grid">
+            <figure>
+              <img src="assets/images/gallery/lab-01.jpg" alt="연구실 실험 장면 1" loading="lazy">
+            </figure>
+            <figure>
+              <img src="assets/images/gallery/lab-02.jpg" alt="연구실 실험 장면 2" loading="lazy">
+            </figure>
+          </div>
+        </article>
+
+        <article class="home-panel projects-panel" id="projects">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Research</p>
+              <h2>연구 분야</h2>
+            </div>
+            <button class="panel-more" type="button" data-status="planned" aria-label="연구 분야 상세 메뉴는 다음 복구 단계에서 연결됩니다">+</button>
+          </div>
+          <p class="panel-description">항법·전자시스템을 중심으로 다양한 이동체의 위치와 자세를 연구합니다.</p>
+          <ul class="research-list">
+            <li><span>01</span> Inertial Navigation</li>
+            <li><span>02</span> Satellite Navigation</li>
+            <li><span>03</span> Integrated Navigation</li>
+            <li><span>04</span> Pedestrian Navigation</li>
+          </ul>
+          <div class="partner-rail" aria-label="아카이브에 남은 협력기관 로고">
+            <div class="partner-track">
+              <img class="is-active" src="assets/images/partners/slo01.jpg" alt="협력기관 로고 1">
+              <img src="assets/images/partners/slo02.jpg" alt="협력기관 로고 2">
+              <img src="assets/images/partners/slo03.jpg" alt="협력기관 로고 3">
+              <img src="assets/images/partners/slo04.jpg" alt="협력기관 로고 4">
+              <img src="assets/images/partners/slo05.jpg" alt="협력기관 로고 5">
+              <img src="assets/images/partners/slo06.jpg" alt="협력기관 로고 6">
+              <img src="assets/images/partners/slo07.jpg" alt="협력기관 로고 7">
+              <img src="assets/images/partners/slo08.jpg" alt="협력기관 로고 8">
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="recovery-note" id="archive-status" aria-label="홈페이지 복구 상태">
+        <div>
+          <p class="eyebrow">NESL</p>
+          <h2>Navigation and Electronics System Lab</h2>
+        </div>
+        <p>현재는 아카이브에서 확인 가능한 대문을 정적 페이지로 복구한 버전입니다. 구성원·논문·프로젝트 페이지는 다음 복구 단계에서 차례로 연결할 예정입니다.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="location">
+      <div class="footer-inner">
+        <img src="assets/images/main/clogo.jpg" alt="NESL 서울대학교 항법전자시스템연구실">
+        <div class="footer-copy">
+          <p>서울대학교 항법전자시스템연구실</p>
+          <p>주소: 서울특별시 관악구 관악로 1 서울대학교</p>
+          <p>교수 연구실: 133동 603호 · 대학원생 연구실: 133동 607호 · 실험실: 302동 418-1호</p>
+          <small>Copyright by NESL. All Rights Reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" aria-hidden="true"></div>
+    <noscript><p class="noscript-message">슬라이드 기능을 사용하려면 JavaScript를 활성화해 주세요. 홈페이지의 주요 내용은 계속 확인할 수 있습니다.</p></noscript>
+    <script src="script.js" defer></script>
+  </body>
+</html>
