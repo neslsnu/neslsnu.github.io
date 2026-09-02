@@ -669,61 +669,6 @@ h2 { margin: 3px 0 0; font-size: 18px; line-height: 1.35; }
 
 .pub-list li::marker { color: var(--blue); font-weight: 700; }
 
-.member-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px 20px;
-}
-
-.member-grid.is-alumni { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 16px; }
-
-.member-card { min-width: 0; }
-
-.member-photo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 3 / 4;
-  margin-bottom: 11px;
-  overflow: hidden;
-  background: var(--soft);
-  border: 1px solid var(--line);
-}
-
-.member-photo img { width: 100%; height: 100%; object-fit: cover; }
-
-.member-photo__blank {
-  color: #c2c9d1;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .1em;
-}
-
-.member-card h3 {
-  margin: 0 0 4px;
-  color: var(--navy);
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.member-en { color: var(--muted); font-size: 12px; font-weight: 400; }
-
-.member-card p { margin: 0 0 3px; font-size: 12px !important; line-height: 1.55; }
-
-.member-role { color: #4b5560; }
-
-.member-degree { color: #5b636d; }
-
-.member-affil { color: var(--blue); font-weight: 700; }
-
-.member-mail a { color: var(--muted); word-break: break-all; }
-
-.member-mail a:hover,
-.member-mail a:focus-visible { color: var(--blue); text-decoration: underline; }
-
-.member-grid.is-alumni .member-photo { aspect-ratio: 1 / 1; }
-
-.member-grid.is-alumni .member-card h3 { font-size: 13px; }
 
 .pub-list.is-detailed li { margin-bottom: 16px; }
 
@@ -938,6 +883,112 @@ a.link-card:focus-visible { border-color: var(--blue); }
 
 .link-card.is-dead .link-name { color: var(--muted); }
 
+/* 교수 소개 */
+.prof-card { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 34px; }
+
+.prof-aside { min-width: 0; }
+
+.prof-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: var(--soft);
+  border: 1px solid var(--line);
+}
+
+.prof-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.prof-photo__blank { color: #c2c9d1; font-size: 12px; font-weight: 700; letter-spacing: .1em; }
+
+.prof-role { margin: 0 0 2px !important; color: var(--muted); font-size: 12px !important; }
+
+.prof-card h3 { margin: 0 0 12px; color: var(--navy); font-size: 19px; font-weight: 700; }
+
+.prof-en { display: block; margin-top: 1px; color: var(--muted); font-size: 13px; font-weight: 400; }
+
+.prof-contact { margin: 0 0 14px; padding: 13px 0 0; border-top: 1px solid var(--line); list-style: none; }
+
+.prof-contact li { display: flex; gap: 8px; margin-bottom: 5px; color: #4b5560; font-size: 12px; }
+
+.prof-contact .ico { color: var(--blue); }
+
+.prof-contact a { word-break: break-all; }
+
+.prof-contact a:hover, .prof-contact a:focus-visible { color: var(--blue); text-decoration: underline; }
+
+.prof-cv { margin: 0 !important; }
+
+.prof-cv a {
+  display: block;
+  padding: 9px 0;
+  border: 1px solid var(--line);
+  color: #4b5560;
+  font-size: 12px;
+  text-align: center;
+}
+
+.prof-cv a:hover, .prof-cv a:focus-visible { border-color: var(--blue); color: var(--blue); }
+
+.prof-body h4 { margin-top: 0; }
+
+.prof-body h4 + ul { margin-bottom: 26px; }
+
+.prof-list { margin: 0; padding: 0; list-style: none; }
+
+.prof-list li { margin-bottom: 9px; font-size: 13px; line-height: 1.7; }
+
+.prof-list b { display: block; color: var(--ink); font-weight: 700; }
+
+.prof-list span { color: #6c757e; font-size: 12px; }
+
+.prof-list.is-timeline li { display: flex; gap: 14px; }
+
+.prof-list.is-timeline time { flex: 0 0 104px; color: var(--blue); font-size: 12px; font-weight: 700; }
+
+/* 구성원 목록 — 한 줄에 한 명 */
+.member-rows { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--navy); }
+
+.member-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 11px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.row-photo {
+  display: flex;
+  flex: 0 0 46px;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 58px;
+  overflow: hidden;
+  background: var(--soft);
+  border: 1px solid var(--line);
+}
+
+.row-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.row-photo__blank { color: #c2c9d1; font-size: 9px; font-weight: 700; letter-spacing: .06em; }
+
+.row-info { min-width: 0; }
+
+.row-info h3 { margin: 0 0 2px; color: var(--navy); font-size: 13px; font-weight: 700; }
+
+.row-info p { margin: 0 0 1px !important; font-size: 12px !important; line-height: 1.55; }
+
+.row-role, .row-degree { color: #5b636d; }
+
+.row-affil { color: var(--blue); font-weight: 700; }
+
+.row-mail { color: var(--muted); word-break: break-all; }
+
+.row-mail:hover, .row-mail:focus-visible { color: var(--blue); text-decoration: underline; }
+
 @media (max-width: 900px) {
   .home-panels { grid-template-columns: repeat(2, 1fr); }
   .projects-panel { grid-column: 1 / -1; }
@@ -980,14 +1031,16 @@ a.link-card:focus-visible { border-color: var(--blue); }
   .side-nav { position: static; }
   .side-nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; }
   .research-cards { grid-template-columns: minmax(0, 1fr); }
-  .member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery-board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prof-card { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .prof-aside { max-width: 260px; }
+  .prof-list.is-timeline li { display: block; }
+  .prof-list.is-timeline time { display: block; margin-bottom: 1px; }
   .link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .news-list li { display: block; }
   .news-list time { display: block; margin-bottom: 2px; }
   .project-row { display: block; }
   .project-row dt { margin-bottom: 1px; }
-  .member-grid.is-alumni { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .page-head h1 { font-size: 21px; }
 }
 
