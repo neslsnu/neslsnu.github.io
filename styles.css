@@ -820,6 +820,42 @@ h2 { margin: 3px 0 0; font-size: 18px; line-height: 1.35; }
 
 .route li + li::before { content: "→"; margin: 0 9px; color: var(--blue); }
 
+.desc-en { color: #7a828c !important; }
+
+.syllabus { margin: 0 0 6px; padding-left: 18px; list-style: none; }
+
+.syllabus > li {
+  position: relative;
+  margin-bottom: 7px;
+  padding-left: 14px;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.syllabus > li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  background: var(--blue);
+}
+
+.syllabus ul { margin: 3px 0 0; padding-left: 0; list-style: none; }
+
+.syllabus ul li {
+  position: relative;
+  padding-left: 13px;
+  color: #6c757e;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.syllabus ul li::before { content: "–"; position: absolute; left: 0; color: #b7bec6; }
+
+.reference { color: #5b636d !important; }
+
 @media (max-width: 900px) {
   .home-panels { grid-template-columns: repeat(2, 1fr); }
   .projects-panel { grid-column: 1 / -1; }
