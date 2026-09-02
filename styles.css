@@ -634,6 +634,35 @@ h2 { margin: 3px 0 0; font-size: 18px; line-height: 1.35; }
 
 .research-card .card-note { margin: 12px 0 0; color: #9aa2ab; font-size: 11px; }
 
+.archive-note {
+  margin: 0 0 30px;
+  padding: 14px 17px;
+  border-left: 3px solid var(--blue);
+  background: var(--soft);
+  color: #5b636d;
+  font-size: 12px !important;
+}
+
+.topic h2 .count {
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.section-ko { margin: -14px 0 18px; color: var(--muted); font-size: 12px; }
+
+.pub-list { margin: 0; padding-left: 28px; }
+
+.pub-list li {
+  margin-bottom: 11px;
+  padding-left: 4px;
+  font-size: 12.5px;
+  line-height: 1.75;
+}
+
+.pub-list li::marker { color: var(--blue); font-weight: 700; }
+
 @media (max-width: 900px) {
   .home-panels { grid-template-columns: repeat(2, 1fr); }
   .projects-panel { grid-column: 1 / -1; }
