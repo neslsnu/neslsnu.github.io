@@ -4,6 +4,9 @@ reference/
 # 작업 중 캡처한 확인용 스크린샷
 verification/
 
+# 로컬 도구 설정
+.claude/
+
 # OS / 편집기
 Thumbs.db
 ehthumbs.db

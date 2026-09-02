@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="OPTIMAL ESTIMATION — 서울대학교 항법전자시스템연구실 연구 분야">
+    <meta name="theme-color" content="#00397f">
+    <title>OPTIMAL ESTIMATION | 서울대학교 항법전자시스템연구실</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="NESL 홈으로 이동">
+          <img src="../assets/images/main/logo.jpg" alt="NESL 서울대학교 항법전자시스템연구실">
+        </a>
+
+        <div class="utility-links" aria-label="보조 메뉴">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="../research/">Research</a>
+          <span aria-hidden="true">|</span>
+          <a href="../index.html#location">Contact</a>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">메뉴 열기</span>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="site-nav" id="primary-navigation" aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li><a href="../research/" aria-current="page"><img src="../assets/images/nav/gnb1.jpg" alt="Research"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb2.jpg" alt="Project"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb3.jpg" alt="Member"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb4.jpg" alt="Publication"></a></li>
+          <li><a href="../lecture/"><img src="../assets/images/nav/gnb5.jpg" alt="Lecture"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb6.jpg" alt="BBS"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb7.jpg" alt="Link"></a></li>
+          <li><a href="../index.html#location"><img src="../assets/images/nav/gnb8.jpg" alt="Location"></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+
+      <div class="page-head">
+        <div class="page-head-inner">
+          <h1>OPTIMAL ESTIMATION</h1>
+          <p class="page-sub">최적 추정</p>
+          <nav class="breadcrumb" aria-label="현재 위치">
+            <a href="../index.html">Home</a>
+            <span class="crumb-sep" aria-hidden="true">&rsaquo;</span>
+            <a href="../research/">RESEARCH</a>
+            <span class="crumb-sep" aria-hidden="true">&rsaquo;</span>
+            <span aria-current="page">OPTIMAL ESTIMATION</span>
+          </nav>
+        </div>
+      </div>
+
+      <div class="page-body">
+        <aside class="side-nav" aria-label="OPTIMAL ESTIMATION 하위 항목">
+          <h2>OPTIMAL ESTIMATION</h2>
+          <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#robust-receding-horizon">Robust &amp; Receding Horizon Kalman Filter</a></li>
+            <li class="is-missing"><a href="#unscented">Unscented Kalman Filter<span aria-hidden="true">·</span></a></li>
+            <li class="is-missing"><a href="#particle">Particle Filter<span aria-hidden="true">·</span></a></li>
+          </ul>
+        </aside>
+
+        <div class="page-content">
+          <section id="introduction" class="topic">
+            <h2>Introduction</h2>
+            <p class="point">지상 무기 체계와 같이 초기 자세 오차가 큰 경우나 급격한 기동으로 인하여 항법 오차 모델의 선형성을 보장 할 수 없는 환경에서는 INS 시스템과 GPS 측정치는 비선형 특성을 가지는 비선형 시스템이 된다. 이러한 비선형 시스템의 오차를 정확하게 추정하기 위해서는 기존에 사용된 칼만필터(Kalman Filter)와는 다른 비선형 필터가 요구된다.</p>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <p class="point">대표적인 비선형 필터로 확장 칼만필터 (EKF)가 있으며 최근 20여년간 비선형 모델에 널리 사용되어 왔다. 그러나 EKF는 비선형 모델을 1차 선형화 시켜서 사용하는 것으로 오차가 매우 클 경우에는 추정 성능이 저하되는 단점을 가지게 된다. 이러한 문제를 해결하기 위하여 최근에는 다양한 비선형 필터링 기법이 제시되었으며 대표적으로 UKF (Unscented Kalman Filter)와 PF (Particle Filter) 등을 들 수 있다.</p>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <p class="point">UKF는 sigma point (SP)라 부르는 확정적인 선택 점(Deterministically shosen points)의 집합을 비선형 모델을 사용하여 변환하는 Unscented transform (UT)을 이용한다. SP은 비선형 모델의 랜덤 상태변수를 통계적으로 가장 잘 나타낼 수 있도록 선택한다.</p>
+            <p class="point">일반적으로 가우시안 모델에 대하여 SP를 결정하여 비선형 필터링을 수행하는 기법을 sigma point Kalman filter (SPKF)로 정의하며 SPKF 종류로 UKF 와 CDKF (Central Difference Kalman filter), 제곱근 형태(Square root, SR)로 SP를 결정하는 SRUKF, SRCDKF 등이 있다.</p>
+            <p class="point">PF는 많은 입자(particles)들을 시스템의 확률분포와 연계하여 시스템의 결과를 추정하는 방식이다. 파티클 필터는 1950년대 처음 소개가 되어 연구되기 시작했지만, 1970년대까지만 하더라도 계산량이 매우 많았기 때문에 많이 사용되지 않았다 그러나 1980년대 들어와서 Bayesian filtering과 resampling 방식이 적용된 후에는 PF의 성능이 향상되어 여러 분야에서 사용되고 있다.</p>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+          </section>
+          <section id="robust-receding-horizon" class="topic">
+            <h2>Robust &amp; Receding Horizon Kalman Filter</h2>
+            <p class="point">칼만 필터를 사용하여 상태 변수를 추정하는 방법은 다양하게 연구되어 왔으며, 급격한 외란이 발생하는 상황에서 외란에 대한 영향을 적게 받으며 상태 변수를 추정하는 방법으로 최근의 관측치를 주로 이용하는 이동구간 칼만 필터가 제시되었다.</p>
+            <p class="point">최근의 관측치를 사용하여 상태 변수를 추정하는 법으로 유한 기억 추정법(Finite memory estimation)이나 이동 구간 추정법(sliding window estimation)등이 존재하며 이러한 추정자는 일종의 FIR(Finite impulse response) 추정자로 사용자가 설정한 임의의 구간에 해당하는 최근의 관측치를 사용하여 상태 변수를 추정한다. FIR 필터에 대비되어 최초의 측정치부터 추정하고 있는 현재까지의 측정치를 모두 사용하여 상태 변수를 방법으로는 IIR(Infinite impulse response)이 있다.</p>
+            <p>다음 그림은 현재의 상태 변수를 추정하기 위해 사용하는 측정치 영역을 비교하여 나타낸 것이다.</p>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <p>아래 그림은 동일한 측정치와 외란 구간에 대하여 IIR 필터와 FIR 필터로 추정하였을 때 상태변수의 추정 오차를 나타낸 것으로 IIR 필터와 FIR 필터 성능을 비교할 수 있고 위에서 제시한 각 필터의 특성을 확인할 수 있다.</p>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            <p>위 그림과 같이 IIR 필터는 초기 측정치부터 현재까지 측정치를 모두 사용하여 상태변수를 추정하므로 초기 측정치가 현재까지 영향을 미치게 되고 FIR 필터는 임의의 구간에 해당하는 최근의 측정치를 사용하여 임의의 구간에 속하는 측정치만 상태변수의 추정에 영향을 미친다.
+            상태변수를 추정하는데 사용하는 측정치 영역의 차이는 외란에 대한 영향에서도 서로 다르게 나타난다.
+            일반적으로 FIR 필터는 IIR 필터에 비해 추정 오차 및 일시적 외란에 강인한 특성을 갖는데, 이는 계측치가 속한 구간이 외란의 영역을 벗어나게 되면 현재의 상태 변수는 구간 초기치(horizon initial state)만이 외란의 영향을 받기 때문이다.</p>
+            <p>따라서 외란의 영향이 계속 남아 있는 IIR 필터에 비하여 상대적으로 빠른 시간에 외란의 영향에서 벗어나 상태변수를 추정할 수 있다.
+            그러나 FIR은 현재의 상태 추정에 사용하는 측정치의 값이 계속 변하므로 복잡한 구조를 가지며 계산량도 많다.
+            반면, IIR은 초기 측정치부터 추정하고자 하는 상태의 바로 전까지 측정치 값이 현재 추정값에 반영되어 있으므로, 상태변수를 추정할 때 전체 측정치를 모두 반영하는 바로 전 단계의 추정치를 이용하여 계산량이 적고 간단한 구조를 가진다.</p>
+          </section>
+          <section id="unscented" class="topic">
+            <h2>Unscented Kalman Filter</h2>
+            <p class="missing-topic">이 항목은 웹 아카이브에 캡처가 남아 있지 않아 본문을 복구하지 못했습니다. 원본 사이트의 메뉴 구성에만 존재가 확인됩니다.</p>
+          </section>
+          <section id="particle" class="topic">
+            <h2>Particle Filter</h2>
+            <p class="missing-topic">이 항목은 웹 아카이브에 캡처가 남아 있지 않아 본문을 복구하지 못했습니다. 원본 사이트의 메뉴 구성에만 존재가 확인됩니다.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer" id="location">
+      <div class="footer-inner">
+        <img src="../assets/images/main/clogo.jpg" alt="NESL 서울대학교 항법전자시스템연구실">
+        <div class="footer-copy">
+          <p>서울대학교 항법전자시스템연구실</p>
+          <p>주소: 서울특별시 관악구 관악로 1 서울대학교</p>
+          <p>교수 연구실: 133동 603호 · 대학원생 연구실: 133동 607호 · 실험실: 302동 418-1호</p>
+          <small>Copyright by NESL. All Rights Reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" aria-hidden="true"></div>
+    <script src="../script.js" defer></script>
+  </body>
+</html>

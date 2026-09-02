@@ -9,18 +9,28 @@
 
 - [x] 아카이브 자료 수집 (Wayback Machine 기준, 중복 제거 296개 원본 보존)
 - [x] 대문(첫 화면) 정적 복구 — 히어로 슬라이더, 반응형, 접근성 처리 포함
-- [ ] RESEARCH 하위 페이지
-- [ ] LECTURE 하위 페이지
+- [x] RESEARCH — 4개 분야, 본문 12개 항목 중 12개 복구
+- [x] LECTURE — 5개 과목 전부 복구
 - [ ] PUBLICATION 하위 페이지
 - [ ] MEMBER 페이지
 - [ ] PROJECT / BBS / LINK 페이지
 
 상단 메뉴 8개 중 아직 개별 페이지가 없는 항목은 클릭 시 안내 메시지를 표시합니다.
 
+### 복구하지 못한 부분
+
+아카이브에 캡처가 남아 있지 않아 되살리지 못한 자료입니다.
+
+- RESEARCH 하위 4개 항목(HW Redundant Algorithm, Analytic Algorithm,
+  Unscented Kalman Filter, Particle Filter) — 메뉴 구성에만 존재가 확인됩니다.
+- 본문에 실려 있던 도표 28장 — 위치와 설명만 남기고 자리 표시로 대체했습니다.
+
 ## 구성
 
 ```
 index.html      대문
+research/       연구 분야 (개요 + 4개 분야 페이지)
+lecture/        강의 (5개 과목)
 styles.css      전체 스타일
 script.js       슬라이더·메뉴·안내 메시지
 assets/images/  아카이브에서 복원한 이미지

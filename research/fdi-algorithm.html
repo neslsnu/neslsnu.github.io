@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FDI ALGORITHM — 서울대학교 항법전자시스템연구실 연구 분야">
+    <meta name="theme-color" content="#00397f">
+    <title>FDI ALGORITHM | 서울대학교 항법전자시스템연구실</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="NESL 홈으로 이동">
+          <img src="../assets/images/main/logo.jpg" alt="NESL 서울대학교 항법전자시스템연구실">
+        </a>
+
+        <div class="utility-links" aria-label="보조 메뉴">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">|</span>
+          <a href="../research/">Research</a>
+          <span aria-hidden="true">|</span>
+          <a href="../index.html#location">Contact</a>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">메뉴 열기</span>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="site-nav" id="primary-navigation" aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li><a href="../research/" aria-current="page"><img src="../assets/images/nav/gnb1.jpg" alt="Research"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb2.jpg" alt="Project"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb3.jpg" alt="Member"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb4.jpg" alt="Publication"></a></li>
+          <li><a href="../lecture/"><img src="../assets/images/nav/gnb5.jpg" alt="Lecture"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb6.jpg" alt="BBS"></a></li>
+          <li><a href="#" data-status="planned"><img src="../assets/images/nav/gnb7.jpg" alt="Link"></a></li>
+          <li><a href="../index.html#location"><img src="../assets/images/nav/gnb8.jpg" alt="Location"></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+
+      <div class="page-head">
+        <div class="page-head-inner">
+          <h1>FDI ALGORITHM</h1>
+          <p class="page-sub">고장 검출·식별</p>
+          <nav class="breadcrumb" aria-label="현재 위치">
+            <a href="../index.html">Home</a>
+            <span class="crumb-sep" aria-hidden="true">&rsaquo;</span>
+            <a href="../research/">RESEARCH</a>
+            <span class="crumb-sep" aria-hidden="true">&rsaquo;</span>
+            <span aria-current="page">FDI ALGORITHM</span>
+          </nav>
+        </div>
+      </div>
+
+      <div class="page-body">
+        <aside class="side-nav" aria-label="FDI ALGORITHM 하위 항목">
+          <h2>FDI ALGORITHM</h2>
+          <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li class="is-missing"><a href="#hw-redundant">HW Redundant Algorithm<span aria-hidden="true">·</span></a></li>
+            <li class="is-missing"><a href="#analytic">Analytic Algorithm<span aria-hidden="true">·</span></a></li>
+          </ul>
+        </aside>
+
+        <div class="page-content">
+          <section id="introduction" class="topic">
+            <h2>Introduction</h2>
+<p>인공위성, 항공기 등 항체에 고장이 발생하면 여러 가지 문제가 발생할 수 있다. 인공위성의 경우, 시스템에 고장이 발생하면 통신, 탐사 등의 임무 수행에 차질을 초래하여 서비스 두절에 의한 경제적 손실과 지구 및 우주탐사를 위한 과학적 연구성과에 치명적인 타격을 준다.
+            1997년 1월 11일 태양 폭발로 인한 거대한 태양물질방출(CME : Coronal Mass Ejection)로 AT&T사의 Telstar 401 위성의 기능이 정지하는 사건이 일어났는데, 이로 인해 방송통신 서비스 기능이 마비되어 2억 달러 이상의 손실이 발생하였다. 또한, 1997년 7월 2일에 발생한 일본의 ADEOS(Advanced Earth Observing Satellite) 위성의 고장은 해수면의 바람에 관한 많은 데이터의 손실을 초래하여, 이를 토대로 하는 기후 관련 연구에 결정적인 문제를 일으키기도 하였다.
+            이와 같이 인공위성은 고장으로 인한 치명적인 손실 위험에도 불구하고 우주공간에서 장시간 자율적으로 임무를 수행해야 하기 때문에 시스템의 신뢰도가 매우 높아야 한다.<br>
+
+            신뢰도를 높이기 위한 기법으로써 위성을 구성하는 여러 하위 시스템에서 고장이나 오작동 등의 돌발상황이 발생하더라도 임무수행을 지속적으로 할 수 있도록 고장검출, 분리 및 복구(FDIR : Fault Detection, Isolation and Recovery)가 가능한 시스템의 개발이 요구되고 있다. 기후관측위성과 같이 지구궤도에서 운용되는 인공위성의 경우, 시스템이 정상적인 상태일 때는 임무수행 모드로 동작하다가 고장이나 오작동이 발생하면 자동적으로 안전모드로 전환되며, 지상 기지국에서 모드변화를 수신하여 시스템의 고장진단 절차를 수행할 수 있다. 그러나 심우주(deep space)를 운항하는 인공위성의 경우 지상 기지국에서 고장검출 및 진단 과정을 수행하기 매우 어려우므로, 위성이 스스로 FDIR을 수행할 수 있도록 하는 기술이 반드시 확보되어야 한다.
+            FDI 알고리즘의 예로 그림 1은 인공위성 자세제어시스템(AOCS : Attitude and Orbit Control System)의 알고리즘 구성도를 나타내고 있다.</p>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            그림 1. AOCS의 FDI 알고리즘 구성도
+            <p>고장에 대처할 수 있는 시스템을 설계하는 방식에는 크게 하드웨어 여분(hardware redundancy) 기법과 해석적 여분(analytic redundancy) 기법으로 분류된다. 기존의 항공기 연구분야에서는 다중의 하드웨어를 장착하여 고장에 대처하는 하드웨어 여분 기법을 주로 적용하였으나, 비용이 많이 든다는 단점 외에도 물리적인 공간을 크게 차지한다는 이유 때문에 위성에 적용하는 제한이 따른다. 그러므로 최근 우주과학기술 선진국에서는 해석적 여분 기법을 이용한 FDIR에 대한 연구가 활발히 진행되고 있다. 세계 10위권의 우주개발 선진국에 진입하고 있는 대한민국도 지속적으로 인공위성을 개발하게 되는 만큼 향후 이러한 고장에 대응하여 인공위성 시스템의 신뢰도를 높일 수 있는 기술에 대한 확보가 절실히 필요할 것으로 판단된다. 그림 2는 시스템에 고장이 발생한 경우 이를 검출, 진단하는 과정을 나타내고 있다.</p>
+            <figure class="lost-figure"><div class="lost-figure__box" role="img" aria-label="유실된 도표"><span aria-hidden="true">도표 유실</span></div><figcaption><span>원본 도표는 아카이브에 남아 있지 않습니다</span></figcaption></figure>
+            그림 2. 고장복구의 단계 및 분류
+          </section>
+          <section id="hw-redundant" class="topic">
+            <h2>HW Redundant Algorithm</h2>
+            <p class="missing-topic">이 항목은 웹 아카이브에 캡처가 남아 있지 않아 본문을 복구하지 못했습니다. 원본 사이트의 메뉴 구성에만 존재가 확인됩니다.</p>
+          </section>
+          <section id="analytic" class="topic">
+            <h2>Analytic Algorithm</h2>
+            <p class="missing-topic">이 항목은 웹 아카이브에 캡처가 남아 있지 않아 본문을 복구하지 못했습니다. 원본 사이트의 메뉴 구성에만 존재가 확인됩니다.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer" id="location">
+      <div class="footer-inner">
+        <img src="../assets/images/main/clogo.jpg" alt="NESL 서울대학교 항법전자시스템연구실">
+        <div class="footer-copy">
+          <p>서울대학교 항법전자시스템연구실</p>
+          <p>주소: 서울특별시 관악구 관악로 1 서울대학교</p>
+          <p>교수 연구실: 133동 603호 · 대학원생 연구실: 133동 607호 · 실험실: 302동 418-1호</p>
+          <small>Copyright by NESL. All Rights Reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" aria-hidden="true"></div>
+    <script src="../script.js" defer></script>
+  </body>
+</html>
