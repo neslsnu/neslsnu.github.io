@@ -921,19 +921,6 @@ a.link-card:focus-visible { border-color: var(--blue); }
 
 .prof-contact a:hover, .prof-contact a:focus-visible { color: var(--blue); text-decoration: underline; }
 
-.prof-cv { margin: 0 !important; }
-
-.prof-cv a {
-  display: block;
-  padding: 9px 0;
-  border: 1px solid var(--line);
-  color: #4b5560;
-  font-size: 12px;
-  text-align: center;
-}
-
-.prof-cv a:hover, .prof-cv a:focus-visible { border-color: var(--blue); color: var(--blue); }
-
 .prof-body h4 { margin-top: 0; }
 
 .prof-body h4 + ul { margin-bottom: 26px; }
